@@ -61,7 +61,7 @@
           <h5>Say "Cheese"</h5>
           <p>Round Or Square, Thick Or Thin, Every Pizza Is Beautiful</p>
           <div class="slide-button">
-            <button class="btn order-btn">Order Now</button>
+            <a href="#order" class="btn btn-outline-dark btn-md"><button class="btn order-btn">Order Now</button></a>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
           <h5>Let's Get Sauced</h5>
           <p>there are three food groups — crust, cheese, and sauce</p>
           <div class="slide-button">
-            <button class="btn order-btn">Order Now</button>
+            <a href="#order" class="btn btn-outline-dark btn-md"><button class="btn order-btn">Order Now</button></a>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
           <h5>Oregano? Orega-Yes</h5>
           <p>A slice a day keeps the gloominess away.</p>
           <div class="slide-button">
-            <button class="btn order-btn">Order Now</button>
+            <a href="#order" class="btn btn-outline-dark btn-md"><button class="btn order-btn">Order Now</button></a>
           </div>
         </div>
       </div>
@@ -157,6 +157,68 @@
       </div>
     </div>
     </div>
+    <!-- end of menu -->
+    <section id="order">
+      <div class="col-12 text-center">
+        <h1 class="text-light pt-4">Get Your Order</h1>
+        <div class="border-top border-primary w-25 mx-auto my-3">
+          <p class="lead">We do deliveries countrywide</p>
+        </div>
+      </div>
+      <div class="container container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-12">
+            <form action="" id="new-order">
+              <div class="form group">
+                <!-- pizza size -->
+                <label for="pizza-sizes">Choose Size:</label>
+                <select name="pizza-size" id="pizza-size" class="custom-select">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>                  
+                </select>
+                <!-- crust type -->
+                <div class="form group">
+                  <label for="crust-type" class="crust">Type of Crust:</label>
+                  <select name="crust-type" class="custom-select" id="crust-type">
+                    <option value="Crispy">Crispy</option>
+                    <option value="stuffed">Stuffed</option>
+                    <option value="glutten">Glutten-free</option>                  
+                  </select>
+                <!-- toppings -->
+                <div class="form-group row mt-5">
+                  <label class="col-sm-3 col-form-label">Topping(s)</label>
+                  <div class="col-sm-9">
+                    <div class="form-check" id="new-topping">                      
+                      <input class="form-check-input" type="checkbox" value="Pepperoni" id="topping">Beef                      
+                    </div>
+                    <div class="form-check" id="new-topping">                      
+                      <input class="form-check-input" type="checkbox" value="Sausage" id="topping">Chicken                      
+                    </div>
+                    <div class="form-check" id="new-topping">                
+                      <input class="form-check-input" type="checkbox" value="Bacon" id="topping">Mushroom                      
+                    </div>  
+                    <div class="form-check" id="new-topping">
+                      <input class="form-check-input" type="checkbox" value="Green_Peppers" id="topping">Herbs
+                      
+                    </div>
+                  </div>
+                </div>
+                <!-- end of toppings -->
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </section>
 
 
 
