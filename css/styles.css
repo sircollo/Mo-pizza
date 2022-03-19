@@ -98,3 +98,28 @@ h4{
 /* #selectedOrders{
   display: none;
 } */
+
+/* contact-us */
+#contact-us{
+  background-color: black;
+  width: 100%;
+  color: white;
+  padding: 1%;
+}
+.col-md-7,.col-md-5{
+  text-align: center;
+  /* border: #f84c3e 1px solid; */
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: auto;
+  width: 100%;
+}
+#gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: auto;
+  width: 100%;
+}
