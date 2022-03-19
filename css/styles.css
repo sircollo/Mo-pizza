@@ -1,1 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+a:hover{
+  color: rgb(165, 61, 13) !important;
+}
+.navbar{
+  padding: 0%;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.navbar-brand{
+  font-family: 'Dancing Script';
+  font-size: 3rem;
+  
+}
