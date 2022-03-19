@@ -111,6 +111,13 @@ h4{
   /* text-align: center; */
    border: #f84c3e 1px solid;
 }
+.contact-details h3{
+  font-weight: 700;
+}
+.contact-details p{
+  padding: 0;
+  font-style: italic;
+}
 
 .mapouter {
   position: relative;
@@ -128,4 +135,23 @@ h4{
 }
 #social-links{
   padding: 2%;
+}
+#social-links ul li{
+  margin: 1%;
+  display: inline;
+  list-style-type: none;
+}
+
+.boxed-bar{
+  text-align: center;
+  display: inline;
+}
+.payments{
+  padding-top: 2%;
+}
+.payments img{
+  margin-left: 2%;
+}
+.copyright{
+  padding-top: 1%;
 }
