@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -11,7 +14,7 @@
   <title>Mo Pizza</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-<body>
+<body class="home">
   <!-- navigation bar -->
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,7 +36,7 @@
               <a class="nav-link" href="#menu">Menu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#order">Contact Us</a>
+              <a class="nav-link" href="#contact">Contact Us</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -43,6 +46,55 @@
       </div>
     </nav>
   </header>
+  <!-- carousel slider -->
+  <div id="pizzaCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#pizzaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/pizza1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Say "Cheese"</h5>
+          <p>Round Or Square, Thick Or Thin, Every Pizza Is Beautiful</p>
+          <div class="slide-button">
+            <button class="btn order-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/pizza2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Let's Get Sauced</h5>
+          <p>there are three food groups — crust, cheese, and sauce</p>
+          <div class="slide-button">
+            <button class="btn order-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/pizza-small.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Oregano? Orega-Yes</h5>
+          <p>A slice a day keeps the gloominess away.</p>
+          <div class="slide-button">
+            <button class="btn order-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
 
 
