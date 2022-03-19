@@ -92,3 +92,9 @@ h4{
 .crust,#toppings{
   padding-top: 5%;
 }
+.col-md-7{
+  text-align: center;
+}
+/* #selectedOrders{
+  display: none;
+} */
