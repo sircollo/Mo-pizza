@@ -71,3 +71,15 @@ a:hover{
   font-family: 'Dancing Script';
   font-size: 2.5rem;
 }
+.my-4{
+  text-align: center;
+  max-height: 10%
+}
+.my-4 img{
+  border: 1px solid black;
+  height: 70%;
+}
+h4{
+  font-family: 'Dancing Script';
+  font-weight: 600;
+}
