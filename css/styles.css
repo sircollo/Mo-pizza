@@ -2,20 +2,20 @@
 
 
 a:hover{
-  color: rgb(230, 9, 9) !important;
+  color: #f84c3e !important;
 }
 .navbar{
   padding: 0%;
   letter-spacing: 1px;
   font-size: 1.2rem;
   font-weight: 700;
+  background: rgb(0, 0, 0) !important;
 }
 .navbar-brand{
   font-family: 'Dancing Script';
   font-size: 3rem;
 }
 .navar-toggler{
-  background-color: red;
   border: none;
   padding: 10px 6px;
   outline: none;
@@ -36,4 +36,10 @@ a:hover{
 .navbar-toggler span + span + span{
   width: 18px;
   margin-left: 4px;
+}
+/* order button */
+.btn{
+  color: white;
+  background-color: #f84c3e;
+  border-radius: none;
 }
