@@ -92,6 +92,7 @@ h4{
 .crust,#toppings{
   padding-top: 5%;
 }
+
 .col-md-7{
   text-align: center;
 }
@@ -107,19 +108,24 @@ h4{
   padding: 1%;
 }
 .col-md-7,.col-md-5{
-  text-align: center;
-  /* border: #f84c3e 1px solid; */
+  /* text-align: center; */
+   border: #f84c3e 1px solid;
 }
 
 .mapouter {
   position: relative;
   text-align: right;
-  height: auto;
+  height: 70vh;
   width: 100%;
+  
 }
 #gmap_canvas {
   overflow: hidden;
   background: none !important;
-  height: auto;
+  height: 70vh;
   width: 100%;
+ 
+}
+#social-links{
+  padding: 2%;
 }
