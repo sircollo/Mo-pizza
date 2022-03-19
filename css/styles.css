@@ -71,6 +71,7 @@ a:hover{
   font-family: 'Dancing Script';
   font-size: 2.5rem;
 }
+/* menu */
 .my-4{
   text-align: center;
   max-height: 10%
@@ -82,4 +83,12 @@ a:hover{
 h4{
   font-family: 'Dancing Script';
   font-weight: 600;
+}
+/* section */
+#order{
+  background-image: url("../images/bg-img.jpg");
+  color: white;
+}
+.crust,#toppings{
+  padding-top: 5%;
 }
