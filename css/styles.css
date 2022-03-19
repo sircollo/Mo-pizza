@@ -2,7 +2,7 @@
 
 
 a:hover{
-  color: rgb(165, 61, 13) !important;
+  color: rgb(230, 9, 9) !important;
 }
 .navbar{
   padding: 0%;
@@ -13,5 +13,27 @@ a:hover{
 .navbar-brand{
   font-family: 'Dancing Script';
   font-size: 3rem;
-  
+}
+.navar-toggler{
+  background-color: red;
+  border: none;
+  padding: 10px 6px;
+  outline: none;
+}
+.navbar-toggler span{
+  display: flex;
+  width: 18px;
+  height: 2px;
+  margin-left: 4px;
+  background-color: white;
+
+}
+.navbar-toggler span + span{
+  margin-top: 4px;
+  width: 18px;
+  margin-left: 4px;
+}
+.navbar-toggler span + span + span{
+  width: 18px;
+  margin-left: 4px;
 }
