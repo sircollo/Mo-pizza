@@ -44,6 +44,7 @@ var largeTopPrices = {
   mushroom: 300,
   herbs: 150,
 };
+var totalCost = 0;
 
 $(document).ready(function (event) {
   //form validation
@@ -69,7 +70,7 @@ $(document).ready(function (event) {
       var showToppings = [];
       var subTotal = 0;
       toppingCost = 0;
-      
+
       $("#topping:checked").each(function () {
         showToppings.push($(this).val());
         var toppingPrice;
@@ -87,6 +88,16 @@ $(document).ready(function (event) {
         var newTopping = new Topping($(this).val(), toppingPrice);
         newPizza.toppings.push(newTopping);
       });
+
+      subTotal = subTotal + toppingCost;
+      totalCost = totalCost+(newPizza.size.price + newPizza.crust.price + subTotal)
+      
+      $(".totalCost").text(totalCost);
+      $("#order-body").append("<tr> <td></td> <td>"+ newPizza.size.size +"</td><td>"+ 
+      newPizza.crust.crustName +"</td><td  class='toppingCell'> " + showToppings + "</td><td>Ksh. "+ (newPizza.size.price + newPizza.crust.price+subTotal) +"</td></tr>");
+      
+      $('#order-details').slideDown(500);
+      $('#col2-img').hide(1000);
     }
   });
 });
