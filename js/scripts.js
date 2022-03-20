@@ -14,6 +14,16 @@ function Topping(name, price) {
   this.toppingName = name;
   this.price = price;
 }
+
+function Address(county, town, street) {
+  this.county = county;
+  this.town = town;
+  this.street = street;
+}
+
+Address.prototype.fullAddress = function () {
+  return this.street + ", " + this.town + " " + this.county;
+}
 var toppingCost = 0;
 var pizzaPrices = {
   Small: 500,
@@ -45,59 +55,89 @@ var largeTopPrices = {
   herbs: 150,
 };
 var totalCost = 0;
-
+var deliveryFee = 100;
+var newAddress;
+var street;
+var town;
+var subTopping = 0;
+var county;
 $(document).ready(function (event) {
-  //form validation
-  $("#new-order").submit(function (event) {
-    event.preventDefault();
+//form validation
+$("#new-order").submit(function (event) {
+  event.preventDefault();
 
-    var checkBoxes = document.getElementsByClassName("form-check-input");
-    var isChecked = false;
-    for (var i = 0; i < checkBoxes.length; i++) {
-      if (checkBoxes[i].checked) {
-        isChecked = true;
+  var checkBoxes = document.getElementsByClassName("form-check-input");
+  var isChecked = false;
+  for (var i = 0; i < checkBoxes.length; i++) {
+    if (checkBoxes[i].checked) {
+      isChecked = true;
+    }
+  }
+
+  if (!isChecked) {
+    alert("Choose a Topping");
+  } else {
+
+    $(".order-button", this).text("Continue Shopping");
+
+
+    var price = pizzaPrices.size;
+    alert(price)
+    var crustPrice = crustPrices.crust;
+    var newPizza = new PizzaOrder(size, price, crust, crustPrice);
+    alert("wewe")
+    var showToppings = [];
+    var subTotal = 0;
+    toppingCost = 0;
+
+    $("#topping:checked").each(function () {
+      showToppings.push($(this).val());
+      var toppingPrice;
+
+      if (size == "Small") {
+        toppingPrice = smallTopPrices[$(this).val()];
+      } else if (size == "medium") {
+        toppingPrice = mediumTopPrices[$(this).val()];
+      } else {
+        toppingPrice = largeTopPrices[$(this).val()];
       }
-    }
 
-    if (!isChecked) {
-      alert("Choose a Topping");
-    } else {
-      $(".order-button", this).text("Continue Shopping");
-      var newPizza = new PizzaOrder(size, price, crust, crustPrice);
-      var price = pizzaPrices[size];
-      var crustPrice = crustPrices[crust];
+      toppingCost += toppingPrice;
 
-      var showToppings = [];
-      var subTotal = 0;
-      toppingCost = 0;
+      var newTopping = new Topping($(this).val(), toppingPrice);
+      newPizza.toppings.push(newTopping);
+    });
 
-      $("#topping:checked").each(function () {
-        showToppings.push($(this).val());
-        var toppingPrice;
+    subTotal = subTotal + toppingCost;
+    totalCost = totalCost + (newPizza.size.price + newPizza.crust.price + subTotal)
 
-        if (size == "Small") {
-          toppingPrice = smallTopPrices[$(this).val()];
-        } else if (size == "medium") {
-          toppingPrice = mediumTopPrices[$(this).val()];
-        } else {
-          toppingPrice = largeToppingPrices[$(this).val()];
-        }
+    $(".totalCost").text(totalCost);
+    $("#order-body").append("<tr> <td></td> <td>" + newPizza.size.size + "</td><td>" +
+      newPizza.crust.crustName + "</td><td  class='toppingCell'> " + showToppings + "</td><td>Ksh. " + (newPizza.size.price + newPizza.crust.price + subTotal) + "</td></tr>");
 
-        toppingCost += toppingPrice;
+    $('#order-details').slideDown(500);
 
-        var newTopping = new Topping($(this).val(), toppingPrice);
-        newPizza.toppings.push(newTopping);
-      });
-
-      subTotal = subTotal + toppingCost;
-      totalCost = totalCost+(newPizza.size.price + newPizza.crust.price + subTotal)
-      
-      $(".totalCost").text(totalCost);
-      $("#order-body").append("<tr> <td></td> <td>"+ newPizza.size.size +"</td><td>"+ 
-      newPizza.crust.crustName +"</td><td  class='toppingCell'> " + showToppings + "</td><td>Ksh. "+ (newPizza.size.price + newPizza.crust.price+subTotal) +"</td></tr>");
-      
-      $('#order-details').slideDown(500);
-      $('#col2-img').hide(1000);
-    }
-  });
+  }
 });
+$("form#address").submit(function (event) {
+  event.preventDefault();
+
+  street = $(".street").val();
+  town = $(".town").val();
+  county = $(".county").val();
+  newAddress = new Address(street, town, county);
+
+
+  $('.address-modal').hide();
+  $('body').removeClass('modal-open');
+  $('.modal-backdrop').remove();
+  $(".addAddress").html('<i class="fa fa-check" aria-hidden="true"></i> Delivery address added!');
+  $(".addAddress").attr("disabled", true);
+  $(".checkout").attr("disabled", false);
+
+  alert("Your Pizza Order will be delivered to " + newAddress.fullAddress());
+});
+
+
+});
+
