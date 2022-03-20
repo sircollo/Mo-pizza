@@ -99,6 +99,25 @@ h4{
 /* #selectedOrders{
   display: none;
 } */
+.orderDetailsTable{
+  color: white;
+  background-color: black;
+}
+/* #order-details{
+  display: none;
+} */
+.modal-content{
+  color: black;
+  text-align: left;
+}
+.totals,.check-delivery{
+  color: white;
+}
+#order-details h3{
+  text-align: center;
+  color: white;
+  font-family: 'Dancing Script';
+}
 
 /* contact-us */
 #contact-us{
