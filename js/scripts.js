@@ -82,9 +82,8 @@ $("#new-order").submit(function (event) {
 
 
     var price = pizzaPrices.size;
-    alert(price)
     var crustPrice = crustPrices.crust;
-    var newPizza = new PizzaOrder(size, price, crust, crustPrice);
+    var newPizza = new PizzaOrder(size,price, crust, crustPrice);
     alert("wewe")
     var showToppings = [];
     var subTotal = 0;
@@ -119,6 +118,7 @@ $("#new-order").submit(function (event) {
 
   }
 });
+// address form
 $("form#address").submit(function (event) {
   event.preventDefault();
 
@@ -131,13 +131,40 @@ $("form#address").submit(function (event) {
   $('.address-modal').hide();
   $('body').removeClass('modal-open');
   $('.modal-backdrop').remove();
-  $(".addAddress").html('<i class="fa fa-check" aria-hidden="true"></i> Delivery address added!');
+  $(".addAddress").html('Delivery address added');
   $(".addAddress").attr("disabled", true);
   $(".checkout").attr("disabled", false);
 
   alert("Your Pizza Order will be delivered to " + newAddress.fullAddress());
 });
 
-
 });
+$(document).ready(function(){
+  $("button.checkout").click(function(event){
+      var address;
+
+      if(town === null)
+      {
+          $(".deliveryAddressRow").hide();
+          $(".deliveryFeeRow").hide();
+          $(".grandTotal").html("Ksh. " + (totalCost));
+      }
+  
+      else
+      {
+          $(".deliveryAddress").html(newAddress.fullAddress());
+          $(".deliveryAddressRow").show();
+          $(".deliveryFeeRow").show();
+          
+          $(".deliveryFee").html("Ksh. " + (deliveryFee));
+          $(".grandTotal").html("Ksh. " + (totalCost +deliveryFee));
+      }
+
+      $(".orderCost").html("Ksh. " + (totalCost));
+      
+
+    });
+});
+
+
 
