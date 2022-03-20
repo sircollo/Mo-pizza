@@ -45,8 +45,6 @@ var largeTopPrices = {
   herbs: 150,
 };
 
-
-
 $(document).ready(function (event) {
   //form validation
   $("#new-order").submit(function (event) {
@@ -64,6 +62,31 @@ $(document).ready(function (event) {
       alert("Choose a Topping");
     } else {
       $(".order-button", this).text("Continue Shopping");
+      var newPizza = new PizzaOrder(size, price, crust, crustPrice);
+      var price = pizzaPrices[size];
+      var crustPrice = crustPrices[crust];
+
+      var showToppings = [];
+      var subTotal = 0;
+      toppingCost = 0;
+      
+      $("#topping:checked").each(function () {
+        showToppings.push($(this).val());
+        var toppingPrice;
+
+        if (size == "Small") {
+          toppingPrice = smallTopPrices[$(this).val()];
+        } else if (size == "medium") {
+          toppingPrice = mediumTopPrices[$(this).val()];
+        } else {
+          toppingPrice = largeToppingPrices[$(this).val()];
+        }
+
+        toppingCost += toppingPrice;
+
+        var newTopping = new Topping($(this).val(), toppingPrice);
+        newPizza.toppings.push(newTopping);
+      });
     }
   });
 });
