@@ -55,16 +55,20 @@ var largeTopPrices = {
   herbs: 150,
 };
 var totalCost = 0;
-var deliveryFee = 100;
+var deliveryFee=100;
 var newAddress;
 var street;
-var town;
-var subTopping = 0;
+var town=null;
+var subTopping=0;
 var county;
+
 $(document).ready(function (event) {
 //form validation
 $("#new-order").submit(function (event) {
   event.preventDefault();
+
+  var size = $("#pizza-size").val();
+  var crust = $("#crust-type").val();
 
   var checkBoxes = document.getElementsByClassName("form-check-input");
   var isChecked = false;
@@ -81,13 +85,13 @@ $("#new-order").submit(function (event) {
     $(".order-button", this).text("Continue Shopping");
 
 
-    var price = pizzaPrices.size;
-    var crustPrice = crustPrices.crust;
+    var price = pizzaPrices[size];
+    var crustPrice = crustPrices[crust];
     var newPizza = new PizzaOrder(size,price, crust, crustPrice);
-    alert("wewe")
+    // alert("error")
     var showToppings = [];
     var subTotal = 0;
-    toppingCost = 0;
+    var toppingCost = 0;
 
     $("#topping:checked").each(function () {
       showToppings.push($(this).val());
