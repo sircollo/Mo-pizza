@@ -96,22 +96,21 @@ h4{
 .col-md-7{
   text-align: center;
 }
-/* #selectedOrders{
-  display: none;
-} */
+
 .orderDetailsTable{
   color: white;
   background-color: black;
 }
-/* #order-details{
+#order-details{
   display: none;
-} */
+}
 .modal-content{
   color: black;
   text-align: left;
 }
 .totals,.check-delivery{
   color: white;
+  text-align: left;
 }
 #order-details h3{
   text-align: center;
